@@ -1,0 +1,724 @@
+/** Ara custom SCSS sheet. */
+
+// Variables.
+$ara-blue: #0C586E;
+$ara-aqua: #009CAD;
+$ara-white: #FFF;
+$ara-black: #212529;
+$ara-equella-aqua: #0A3B4E;
+$ara-success: #5cb85c;
+$ara-warning: #D23330;
+$polar-white: #edf3f2;
+
+$link-hover-color: $ara-blue;
+$link-hover-decoration: none;
+
+$breadcrumb-text-color: $ara-blue;
+$breadcrumb-bg-color: $ara-white;
+
+// W3C defaults reset. https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3
+$default-link-color: #0000EE;
+$default-link-visited-color: #551A8B;
+$default-link-active-color: #FF0000;
+a {
+    color: $default-link-color;
+}
+a:visited {
+    color: $default-link-visited-color;
+}
+a:link:active, a:visited:active {
+    color: $default-link-active-color;
+}
+a:link, a:visited {
+    text-decoration: underline; cursor: pointer;
+}
+
+// Block links.
+.block {
+    a {
+        color: $ara-blue;
+        text-decoration: none;
+        &:hover {
+            color: $ara-blue;
+            text-decoration: underline;
+        }
+    }
+    // We have to target specific blocks for W3C defaults.
+    &.block_html,
+    &.block_cohortspecifichtml {
+        .card-text {
+            a {
+                text-decoration: underline;
+                color: $default-link-color;
+                &:hover {
+                    text-decoration: underline;
+                    color: $default-link-color;
+                }
+            }
+        }
+    }
+}
+.forgetpass,
+table {
+    a {
+        color: $ara-blue;
+        text-decoration: none;
+        &:hover {
+            color: $ara-blue;
+            text-decoration: underline;
+        }
+    }
+}
+
+.admin .nav-tabs {
+    a {
+        color: $ara-blue;
+        text-decoration: none;
+        &:hover {
+            color: $ara-blue;
+            text-decoration: none;
+        }
+    }
+}
+
+a.btn-secondary {
+    text-decoration: none;
+    color: $ara-black;
+    &:hover {
+        text-decoration: none;
+        color: $ara-black;
+    }
+}
+
+nav {
+    // Site name.
+    .site-name {
+        color: $ara-blue;
+    }
+    a.navbar-brand {
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    // User dropdown button.
+    .usermenu, span.userbutton {
+        color: $ara-blue;
+        a {
+            text-decoration: none;
+            color: $ara-blue;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// Draws.
+.drawer {
+    a {
+        text-decoration: none;
+        color: $ara-blue;
+        &:hover {
+            text-decoration: none;
+            color: $ara-blue;
+        }
+    }
+}
+
+#nav-drawer {
+    .icon {
+        color: $gray-700;
+    }
+    a.list-group-item {
+        text-decoration: none;
+        color: $gray-700;
+        &:hover, &:visited  {
+            text-decoration: none;
+        }
+        &.active {
+            color: $ara-white;
+            background-color: $ara-blue;
+            border-color: $ara-blue;
+            .icon {
+                color: $ara-white;
+            }
+        }
+    }
+}
+
+// @todo check what this used for.
+#nav-drawer.off .list-group-item {
+    color: $ara-white;
+    background-color: $ara-blue;
+    border: none;
+}
+
+// Site administration button.
+.siteadminlink {
+    .btn {
+        border-radius: 3px;
+        margin: 0 .25rem;
+        color: $ara-white;
+        background-color: $ara-blue;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            color: $ara-blue;
+            background-color: $ara-white;
+            border-color: $ara-blue;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (min-width: 1100px) {
+    .siteadminlink {
+        a {
+            &::after {
+                content:'Site Administration';
+                margin-left:10px;
+            }
+        }
+    }
+}
+// Fordson admin stuff.
+.coursecontrols {
+    .teacherdash,
+    .studentdash {
+        .btn {
+            color: $ara-white;
+            background-color: $ara-blue;
+            text-decoration: none;
+            &:hover,
+            &:focus {
+                color: $ara-blue;
+                background-color: $ara-white;
+                border-color: $ara-blue;
+                text-decoration: none;
+            }
+        }
+    }
+    .btn {
+        color: $ara-white;
+        text-decoration: none;
+        border-radius: 3px;
+        margin: 0 .25rem;
+        &.edit-btn {
+            &.btn-success {
+                &:hover,
+                &:focus {
+                    color: $ara-success;
+                    background-loginiconcolor: $ara-white;
+                    border-color: $ara-success;
+                    text-decoration: none;
+                }
+            }
+            &.btn-danger {
+                &:hover,
+                &:focus {
+                    color: $ara-warning;
+                    background-color: $ara-white;
+                    border-color: $ara-warning;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1100px) {
+    .coursecontrols {
+        .btn {
+            &.edit-btn {
+                &.btn-success {
+                    &.editingbutton[data-original-title*='Turn Edit On']::after {
+                        content: 'Turn Edit On';
+                        margin-left: 5px;
+                    }
+                }
+                &.btn-danger {
+                    &.editingbutton[data-original-title*='Turn Edit Off']::after {
+                        content: 'Turn Edit Off';
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1100px) {
+    .coursecontrols {
+        .teacherdash {
+            a {
+                &::after {
+                    content: 'Course Management';
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    a.fhs-tooltip[data-original-title*='Course Dashboard']::after{
+        content: 'Course Dashboard';
+        margin-left: 10px;
+    }
+}
+
+// Modals.
+.teacherdashboard, .modchooser {
+    a {
+        text-decoration: none;
+        color: $ara-blue;
+        &:hover {
+            text-decoration: none;
+            color: $ara-blue;
+        }
+    }
+}
+
+// Page header.
+.page-context-header {
+    color: $ara-blue;
+}
+
+.breadcrumb  {
+    background-color: $breadcrumb-bg-color;
+    .breadcrumb-item {
+        a {
+            color: $breadcrumb-text-color;
+            text-decoration: none;
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#back-to-top {
+    color: $ara-white;
+}
+
+// Footer.
+#page-footer {
+    color: $ara-white;
+}
+
+// Page layout targeting.
+.pagelayout-mydashboard {
+    #region-main {
+        padding: 0;
+        margin-top: 0;
+    }
+}
+
+// General icons.
+.icon {
+    color: $ara-blue;
+    text-decoration: none;
+    &:hover {
+        color: $ara-blue;
+        text-decoration: none;
+    }
+}
+// Caret.
+.dropdown-toggle {
+    color: $ara-blue;
+    text-decoration: none;
+    &:hover {
+        color: $ara-blue;
+        text-decoration: none;
+    }
+}
+
+.dropdown-toggle::after {
+    color: $ara-blue;
+}
+
+// Drop-down menus.
+a.dropdown-item {
+    text-decoration: none;
+    background-color: $ara-white;
+    color: $ara-blue;
+    &:hover {
+        text-decoration: none;
+        background-color: $ara-blue;
+        color: $ara-white;
+        .icon {
+            text-decoration: none;
+            background-color: $ara-blue;
+            color: $ara-white;
+        }
+    }
+    &:focus,
+    &:focus-within,
+    &:active  {
+        outline: 0;
+        background-color: $ara-blue;
+        color: $ara-white;
+        .icon {
+            background-color: $ara-blue;
+            color: $ara-white;
+        }
+    }
+}
+
+div.dropdown-item {
+    a {
+        text-decoration: none;
+        background-color: transparent;
+        color: $ara-blue;
+        &:hover {
+            color: $ara-white;
+        }
+    }
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+        text-decoration: none;
+        background-color: $ara-blue;
+        color: $ara-white;
+        a, span {
+            text-decoration: none;
+        }
+    }
+}
+
+
+// Course overview controls. Fordson targets ID selector.
+#page-my-index {
+    .block_with_controls {
+        .btn-outline-secondary {
+            color: $ara-blue;
+            border-color: $ara-blue;
+            background-color: $ara-white;
+            &:hover {
+                text-decoration: none;
+                background-color: $ara-blue;
+                color: $ara-white;
+                .icon {
+                    color: $ara-white;
+                }
+                &:after {
+                    color: $ara-white;
+                }
+                &::after {
+                    color: $ara-white;
+                }
+            }
+            &:active,
+            &:focus,
+            &.active {
+                color: $ara-white;
+                background-color: $ara-blue;
+                border-color: $ara-blue;
+            }
+        }
+    }
+}
+
+
+.btn-primary {
+    color: $ara-white;
+    text-decoration: none;
+    &:hover {
+        color: $ara-white;
+        text-decoration: none;
+    }
+}
+
+a.btn-outline-secondary, button.btn-outline-secondary {
+    color: $ara-blue;
+    border-color: $ara-blue;
+    background-color: $ara-white;
+    &:active,
+    &:hover,
+    &:focus,
+    &.active {
+        color: $ara-white;
+        background-color: $ara-blue;
+        border-color: $ara-blue;
+    }
+}
+
+.mform {
+    .collapseexpand,
+    .fheader,
+    .felement > a {
+        color: $ara-blue;
+        text-decoration: none;
+    }
+}
+
+.popover-region-container {
+    a {
+        color: $ara-blue;
+        text-decoration: none;
+        &:hover {
+            color: $ara-blue;
+            text-decoration: none;
+        }
+    }
+}
+
+.btn-secondary, .btn-default {
+    text-decoration: none;
+    color: $body-color;
+    &:hover {
+        text-decoration: none;
+        color: $body-color;
+    }
+}
+
+// Reset a link color and decoration at course content section to standard link.
+.course-content {
+    h1,
+    h2,
+    h3 {
+        font-weight: 600;
+        color: $ara-blue;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+    h4 {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+    ul {
+        /* Fix a display problem with list items - the left side of discs are cut off. */
+        padding-left: 1.2em;
+    }
+}
+
+// Force background white.
+body .headerbkg > .default {
+    background: $ara-white none !important;
+}
+
+.path-mod-forum {
+    .activesetting, .currentlink {
+        color: $ara-blue;
+    }
+}
+
+.page-item .page-link {
+    color: $ara-black;
+    text-decoration: none;
+}
+
+.navbar-fhs .navbar-nav {
+    .nav-link {
+        color: $ara-blue;
+    }
+    .show>.nav-link,
+    .active>.nav-link,
+    .nav-link.show,
+    .nav-link.active {
+        color: $ara-blue;
+    }
+}
+
+.navbar-fhs .navbar-nav .nav-link:hover,
+.navbar-fhs .navbar-nav .nav-link:focus {
+    color: $ara-blue;
+    text-decoration: underline;
+}
+
+// Course homepage section and activity links.
+.activityinstance a,
+.sectionname a,
+.section-modchooser-link a {
+    text-decoration: none;
+    color: $ara-blue;
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        color: $ara-blue;
+    }
+}
+
+.course-content .single-section .section-navigation {
+    .mdl-left:not(:empty),
+    .mdl-right:not(:empty) {
+        a {
+            color: $ara-blue;
+            text-decoration: none;
+            &:hover {
+                color: ligthen($ara-blue, 10%);
+                text-decoration: none;
+            }
+        }
+    }
+}
+.activity-navigation {
+    a {
+        color: $ara-blue;
+        text-decoration: none;
+        &:hover {
+            color: ligthen($ara-blue, 10%);
+            text-decoration: none;
+        }
+    }
+}
+
+a.section-go-link {
+    color: $ara-black;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        color: $ara-black;
+        text-decoration: none;
+    }
+}
+
+// Ara Custom. ??????
+.course-content ul.section {
+    margin: 0.25rem;
+}
+
+// One Topic course format.
+.format-onetopic {
+    .onetopic {
+        .nav-tabs {
+            .nav-item {
+                a {
+                    text-decoration: none;
+                    color: $ara-blue;
+                    padding: 2px 2px 3px 2px;
+                    outline: none !important;
+                    margin: 4px 1px 1px 2px;
+                    &:hover,
+                    &:active {
+                        border-color: $ara-blue;
+                        border-width: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#course_format_onetopic_config_movesection a {
+    color: $ara-blue;
+}
+
+// Grid course format.
+.format-grid {
+    #gridshadebox_content {
+        border: none;
+    }
+    .gridicons a {
+        color: $ara-blue;
+        text-decoration: none;
+        &:hover {
+            color: $ara-blue;
+        }
+    }
+    img.iconsmall.edit {
+        height: 16px;
+    }
+}
+
+// Dialogue window. Used in filepicker and etc.
+.moodle-dialogue-bd div[role="alert"] {
+    color: $ara-white;
+}
+
+#category-course-list {
+    h4 {
+        margin-top: 0.25em;
+    }
+    a {
+        color: $ara-blue;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            color: $ara-blue;
+            text-decoration: underline;
+        }
+    }
+
+}
+
+// Ajust card width for smaller devices.
+@media all and (max-width: 576px) {
+    .block_recentlyaccessedcourses .dashboard-card-deck.fixed-width-cards .dashboard-card {
+        width: 100%;
+    }
+}
+
+.equella-page.yui3-skin-sam .yui3-panel .yui3-widget-hd {
+    padding: 8px 28px 8px 8px;
+    min-height: 13px;
+    color: $ara-white;
+    background: $ara-equella-aqua;
+}
+
+.section .label .mod-indent-outer {
+    padding-left: 0;
+}
+
+.section .activity .availabilityinfo,
+.section .activity .contentafterlink {
+    margin-top: 0;
+}
+
+.section li.activity {
+    margin-top: 0.5em;
+}
+
+.section .activity .contentafterlink p {
+    margin: 0;
+}
+
+// https://learningworks.freshdesk.com/helpdesk/tickets/6688
+.ie {
+    &.editing,
+    #region-main-box #block-region-side-pre {
+        .card-body {
+            overflow: visible;
+        }
+        section.block.block_html {
+            &.block_html {
+                display: block;
+            }
+        }
+    }
+}
+
+// IE 11 dialogue modal header fix.
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd {
+    color: inherit;
+    background-color: inherit;
+}
+
+.simplesearchform {
+    .btn {
+        background-color: $ara-blue;
+        .icon {
+            color: $ara-white;
+        }
+    }
+}
+.category-listing-actions a:not(.btn-secondary),
+.nav-link,
+.list-unstyled a,
+.form-description a,
+.aalink {
+    color: $ara-blue;
+    text-decoration: none;
+    &:hover {
+        color: $ara-blue;
+        text-decoration: none;
+    }
+}
+// Hamburger.
+[data-action="toggle-drawer"] .icon {
+    color: $ara-black;
+}
+.btn-link:hover {
+    color: $ara-blue;
+}
+
+
