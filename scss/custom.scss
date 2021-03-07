@@ -398,26 +398,32 @@ div.dropdown-item {
     }
 }
 
-.btn-primary {
-    color: $ara-white;
-    text-decoration: none;
-    &:hover {
+.btn {
+    &.btn-primary,
+    &.btn-default {
         color: $ara-white;
         text-decoration: none;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $ara-white;
+            text-decoration: none;
+        }
     }
-}
-
-a.btn-outline-secondary, button.btn-outline-secondary {
-    color: $ara-blue;
-    border-color: $ara-blue;
-    background-color: $ara-white;
-    &:active,
-    &:hover,
-    &:focus,
-    &.active {
-        color: $ara-white;
-        background-color: $ara-blue;
+    &.btn-outline-secondary {
+        color: $ara-blue;
         border-color: $ara-blue;
+        background-color: $ara-white;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $ara-white;
+            background-color: $ara-blue;
+            border-color: $ara-blue;
+        }
+    }
+    &.btn-link:hover {
+        color: $ara-blue;
     }
 }
 
@@ -726,7 +732,3 @@ a.section-go-link {
 [data-action="toggle-drawer"] .icon {
     color: $ara-black;
 }
-.btn-link:hover {
-    color: $ara-blue;
-}
-
