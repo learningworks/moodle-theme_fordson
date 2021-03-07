@@ -27,10 +27,14 @@ a:visited {
     color: $default-link-visited-color;
 }
 a:link:active, a:visited:active {
-    color: $default-link-active-color;
+    color: $ara-black;
 }
 a:link, a:visited {
-    text-decoration: underline; cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
+}
+a:link:hover{
+    color: $default-link-color;
 }
 
 // Block links.
@@ -385,40 +389,6 @@ div.dropdown-item {
     }
 }
 
-
-// Course overview controls. Fordson targets ID selector.
-#page-my-index {
-    .block_with_controls {
-        .btn-outline-secondary {
-            color: $ara-blue;
-            border-color: $ara-blue;
-            background-color: $ara-white;
-            &:hover {
-                text-decoration: none;
-                background-color: $ara-blue;
-                color: $ara-white;
-                .icon {
-                    color: $ara-white;
-                }
-                &:after {
-                    color: $ara-white;
-                }
-                &::after {
-                    color: $ara-white;
-                }
-            }
-            &:active,
-            &:focus,
-            &.active {
-                color: $ara-white;
-                background-color: $ara-blue;
-                border-color: $ara-blue;
-            }
-        }
-    }
-}
-
-
 .btn-primary {
     color: $ara-white;
     text-decoration: none;
@@ -439,6 +409,36 @@ a.btn-outline-secondary, button.btn-outline-secondary {
         color: $ara-white;
         background-color: $ara-blue;
         border-color: $ara-blue;
+    }
+}
+
+// Course overview controls. Fordson targets ID selector.
+#page-my-index {
+    .btn-outline-secondary {
+        color: $ara-blue;
+        border-color: $ara-blue;
+        background-color: $ara-white;
+        &:hover {
+            text-decoration: none;
+            background-color: $ara-blue;
+            color: $ara-white;
+            .icon {
+                color: $ara-white;
+            }
+            &:after {
+                color: $ara-white;
+            }
+            &::after {
+                color: $ara-white;
+            }
+        }
+        &:active,
+        &:focus,
+        &.active {
+            color: $ara-white;
+            background-color: $ara-blue;
+            border-color: $ara-blue;
+        }
     }
 }
 
@@ -720,5 +720,4 @@ a.section-go-link {
 .btn-link:hover {
     color: $ara-blue;
 }
-
 
