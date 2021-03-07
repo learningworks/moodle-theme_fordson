@@ -33,7 +33,7 @@ a:link, a:visited {
     text-decoration: underline;
     cursor: pointer;
 }
-a:link:hover{
+a:hover {
     color: $default-link-color;
 }
 
@@ -42,7 +42,10 @@ a:link:hover{
     a {
         color: $ara-blue;
         text-decoration: none;
-        &:hover {
+        &:visited,
+        &:hover,
+        &:active,
+        &:focus {
             color: $ara-blue;
             text-decoration: underline;
         }
@@ -67,10 +70,14 @@ table {
     a {
         color: $ara-blue;
         text-decoration: none;
-        &:hover {
+        &:visited,
+        &:hover,
+        &:active,
+        &:focus  {
             color: $ara-blue;
             text-decoration: underline;
         }
+
     }
 }
 
@@ -354,13 +361,15 @@ a.dropdown-item {
             color: $ara-white;
         }
     }
+    &:active,
     &:focus,
     &:focus-within,
-    &:active  {
-        outline: 0;
+      {
+        text-decoration: none;
         background-color: $ara-blue;
         color: $ara-white;
         .icon {
+            text-decoration: none;
             background-color: $ara-blue;
             color: $ara-white;
         }
