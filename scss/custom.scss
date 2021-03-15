@@ -9,6 +9,8 @@ $ara-equella-aqua: #0A3B4E;
 $ara-success: #5cb85c;
 $ara-warning: #D23330;
 $polar-white: #edf3f2;
+$ara-primary: #0c586e;
+$ara-secondary: #d3d9df;
 
 $link-hover-color: $ara-blue;
 $link-hover-decoration: none;
@@ -20,22 +22,27 @@ $breadcrumb-bg-color: $ara-white;
 $default-link-color: #0000EE;
 $default-link-visited-color: #551A8B;
 $default-link-active-color: #FF0000;
+
 a {
     color: $default-link-color;
+    &:visited {
+        color: $default-link-visited-color;
+    }
+    &:visited {
+        color: $default-link-visited-color;
+    }
+    &:hover {
+        color: $default-link-color;
+    }
+    &:active {
+        color: $ara-black;
+    }
+    &:link, &:visited {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }
-a:visited {
-    color: $default-link-visited-color;
-}
-a:link:active, a:visited:active {
-    color: $ara-black;
-}
-a:link, a:visited {
-    text-decoration: underline;
-    cursor: pointer;
-}
-a:hover {
-    color: $default-link-color;
-}
+
 
 // Block links.
 .block {
@@ -220,7 +227,7 @@ nav {
                 &:hover,
                 &:focus {
                     color: $ara-success;
-                    background-loginiconcolor: $ara-white;
+                    background-color: $ara-white;
                     border-color: $ara-success;
                     text-decoration: none;
                 }
@@ -506,6 +513,34 @@ div.dropdown-item {
     }
 }
 
+// Ara Custom. ??????
+.course-content ul.section {
+    margin: 0.25rem;
+}
+
+.section .label .mod-indent-outer {
+    padding-left: 0;
+}
+
+
+.section .activity .availabilityinfo,
+.section .activity .contentafterlink {
+    margin-top: 0;
+}
+
+.section li.activity {
+    margin-top: 0.5em;
+}
+
+.section .activity .contentafterlink p {
+    margin: 0;
+}
+
+// @todo check with Ara.
+body:not(.editing) #gridmiddle-column {
+    line-height: inherit;
+}
+
 // Force background white.
 body .headerbkg > .default {
     background: $ara-white none !important;
@@ -587,11 +622,6 @@ a.section-go-link {
     }
 }
 
-// Ara Custom. ??????
-.course-content ul.section {
-    margin: 0.25rem;
-}
-
 // One Topic course format.
 .format-onetopic {
     .onetopic {
@@ -670,23 +700,6 @@ a.section-go-link {
     background: $ara-equella-aqua;
 }
 
-.section .label .mod-indent-outer {
-    padding-left: 0;
-}
-
-.section .activity .availabilityinfo,
-.section .activity .contentafterlink {
-    margin-top: 0;
-}
-
-.section li.activity {
-    margin-top: 0.5em;
-}
-
-.section .activity .contentafterlink p {
-    margin: 0;
-}
-
 // https://learningworks.freshdesk.com/helpdesk/tickets/6688
 .ie {
     &.editing,
@@ -716,13 +729,21 @@ a.section-go-link {
         }
     }
 }
-#siteconfiglink a,
+
+.aabtn,
+.aalink,
+.coursecat a,
+.course_category_tree a,
+.categoryname a,
 .category-listing-actions a:not(.btn-secondary),
+.form-description a,
+.list-unstyled a,
 .resettable a,
 .nav-link,
-.list-unstyled a,
-.form-description a,
-.aalink {
+.paging a,
+#siteconfiglink a,
+.coursebox a,
+.classzee{
     color: $ara-blue;
     text-decoration: none;
     &:hover {
@@ -733,4 +754,31 @@ a.section-go-link {
 // Hamburger.
 [data-action="toggle-drawer"] .icon {
     color: $ara-black;
+}
+
+// Fix issue with HTML block scroll for responsive images.
+.atto_image_button_text-top.img-responsive,
+.atto_image_button_middle.img-responsive,
+.atto_image_button_text-bottom.img-responsive {
+    display: inline-block;
+    max-width: calc(100% - 1em);
+}
+
+.btn {
+    &:focus,
+    &.focus {
+        outline: 0;
+    }
+    &.btn-primary:focus,
+    &.btn-primary.focus{
+        box-shadow: 0 0 0 .2rem rgba($ara-primary,.5);
+    }
+    &.btn-success:focus,
+    &.btn-success.focus {
+        box-shadow: 0 0 0 .2rem rgba($ara-success,.5);
+    }
+    &.btn-secondary:focus,
+    &.btn-secondary.focus {
+        box-shadow: 0 0 0 .2rem rgba($ara-secondary,.5);
+    }
 }
