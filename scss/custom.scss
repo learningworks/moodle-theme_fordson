@@ -739,11 +739,12 @@ a.section-go-link {
 .form-description a,
 .list-unstyled a,
 .resettable a,
-.nav-link,
+.nav-item .nav-link,
+.list-group .list-group-item,
 .paging a,
 #siteconfiglink a,
 .coursebox a,
-.classzee{
+.userprofile a{
     color: $ara-blue;
     text-decoration: none;
     &:hover {
@@ -781,4 +782,7 @@ a.section-go-link {
     &.btn-secondary.focus {
         box-shadow: 0 0 0 .2rem rgba($ara-secondary,.5);
     }
+}
+.list-group-item-action:focus {
+    box-shadow: 0 0 0 .1rem rgba($ara-primary,.25);
 }
