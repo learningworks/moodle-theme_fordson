@@ -740,7 +740,6 @@ a.section-go-link {
 .list-unstyled a,
 .resettable a,
 .nav-item .nav-link,
-.list-group .list-group-item,
 .paging a,
 #siteconfiglink a,
 .coursebox a,
@@ -752,6 +751,23 @@ a.section-go-link {
         text-decoration: none;
     }
 }
+.list-group .list-group-item {
+    color: $ara-black;
+    text-decoration: none;
+    &:hover {
+        color: $ara-black;
+        text-decoration: none;
+        background-color: $gray-100;
+    }
+    &:focus {
+        background-color: $ara-white;
+        box-shadow: 0 0 0 .1rem rgba($ara-primary,.25);
+    }
+}
+.list-group-item-action:focus {
+    box-shadow: 0 0 0 .1rem rgba($ara-primary,.25);
+}
+
 // Hamburger.
 [data-action="toggle-drawer"] .icon {
     color: $ara-black;
@@ -782,7 +798,4 @@ a.section-go-link {
     &.btn-secondary.focus {
         box-shadow: 0 0 0 .2rem rgba($ara-secondary,.5);
     }
-}
-.list-group-item-action:focus {
-    box-shadow: 0 0 0 .1rem rgba($ara-primary,.25);
 }
