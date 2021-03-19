@@ -738,12 +738,13 @@ a.section-go-link {
 .category-listing-actions a:not(.btn-secondary),
 .form-description a,
 .list-unstyled a,
+.info a,
 .resettable a,
 .nav-item .nav-link,
 .paging a,
 #siteconfiglink a,
 .coursebox a,
-.userprofile a{
+.userprofile a {
     color: $ara-blue;
     text-decoration: none;
     &:hover {
