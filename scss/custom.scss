@@ -557,6 +557,7 @@ body .headerbkg > .default {
     text-decoration: none;
 }
 
+// Fordson - navbar-fhs.
 .navbar-fhs .navbar-nav {
     .nav-link {
         color: $ara-blue;
@@ -573,6 +574,16 @@ body .headerbkg > .default {
 .navbar-fhs .navbar-nav .nav-link:focus {
     color: $ara-blue;
     text-decoration: underline;
+}
+
+// Use by File picker.
+.nav-pills {
+    .nav-link.active,
+    .show > .nav-link {
+        &:hover {
+            color: $ara-white;
+        }
+    }
 }
 
 // Course homepage section and activity links.
@@ -737,6 +748,7 @@ a.section-go-link {
 .categoryname a,
 .category-listing-actions a:not(.btn-secondary),
 .form-description a,
+.adminpagetitle a,
 .list-unstyled a,
 .info a,
 .resettable a,
