@@ -340,15 +340,15 @@ nav {
     }
 }
 // Caret.
-.dropdown-toggle {
+.action-menu .dropdown-toggle, .dropdown-toggle {
     color: $ara-blue;
     text-decoration: none;
-    &:hover {
+    &:hover,
+    &:visit {
         color: $ara-blue;
         text-decoration: none;
     }
 }
-
 .dropdown-toggle::after {
     color: $ara-blue;
 }
@@ -358,20 +358,11 @@ a.dropdown-item {
     text-decoration: none;
     background-color: $ara-white;
     color: $ara-blue;
-    &:hover {
-        text-decoration: none;
-        background-color: $ara-blue;
-        color: $ara-white;
-        .icon {
-            text-decoration: none;
-            background-color: $ara-blue;
-            color: $ara-white;
-        }
-    }
+    &:hover,
     &:active,
+    &.active,
     &:focus,
-    &:focus-within,
-      {
+    &:focus-within {
         text-decoration: none;
         background-color: $ara-blue;
         color: $ara-white;
@@ -402,7 +393,16 @@ div.dropdown-item {
         a, span {
             text-decoration: none;
         }
+        a > .icon {
+            background-color: $ara-blue;
+            color: $ara-white;
+        }
     }
+}
+
+// Override Fordson.
+#page-my-index .dropdown-item.active, .dropdown-item:active {
+    color: $ara-white;
 }
 
 .btn {
@@ -740,26 +740,40 @@ a.section-go-link {
         }
     }
 }
-
+// Ara default link actions.
+[data-region="grading-navigation"] a,
+a[data-action="showcount"],
 .aabtn,
 .aalink,
+.adminpagetitle a,
+.editor_atto_menu .dropdown-menu>li>a,
 .coursecat a,
 .course_category_tree a,
+.coursebox a,
+.commentscontainer a,
 .categoryname a,
 .category-listing-actions a:not(.btn-secondary),
 .form-description a,
-.adminpagetitle a,
-.list-unstyled a,
+.forumpost .header a,
+.forumpost footer a,
+.floater a,
+.glossarycontrol a,
+.glossarydisplay .entrybox a,
+.helplink a,
 .info a,
-.resettable a,
+.list-unstyled li>a,
 .nav-item .nav-link,
 .paging a,
+#page-user-preferences #page-content a,
+#page-mod-feedback-edit [role="main"] p>a,
 #siteconfiglink a,
-.coursebox a,
+.reportlink a,
+.resettable a,
 .userprofile a {
     color: $ara-blue;
     text-decoration: none;
-    &:hover {
+    &:hover,
+    &:visited {
         color: $ara-blue;
         text-decoration: none;
     }
@@ -811,4 +825,60 @@ a.section-go-link {
     &.btn-secondary.focus {
         box-shadow: 0 0 0 .2rem rgba($ara-secondary,.5);
     }
+}
+// Forum post actions.
+.forumpost .post-actions a {
+    color: $ara-blue;
+    text-decoration: none;
+    &:hover {
+        color: $ara-black;
+        text-decoration: underline;
+    }
+}
+
+a[data-add-sections] {
+    color: $ara-blue;
+    text-decoration: none;
+    &:hover {
+        color: $ara-blue;
+        text-decoration: underline;
+    }
+}
+.block_course_contents {
+    li.section-item,
+    li.list-group-item {
+        border: none;
+        .section-number,
+        .badge {
+            border-radius: 3px;
+        }
+        &.selected,
+        &.active {
+            font-weight: 700;
+            background-color: initial;
+            border-color: initial;
+            .section-number,
+            .badge {
+                background-color: $ara-blue;
+                color: $ara-white;
+            }
+            .section-title {
+                text-decoration: none;
+                color: $ara-black;
+            }
+        }
+    }
+}
+
+.page-item.disabled .page-link {
+    color: $ara-black;
+    opacity: 50%;
+    pointer-events: none;
+    cursor: auto;
+}
+
+.format-onetopic ul.nav-tabs li a .tab_content.dimmed .sectionname {
+    color: #474545;
+    background-color: #d3d3d3;
+    opacity: 1.5;
 }
