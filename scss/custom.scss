@@ -546,11 +546,7 @@ body .headerbkg > .default {
     background: $ara-white none !important;
 }
 
-.path-mod-forum {
-    .activesetting, .currentlink {
-        color: $ara-blue;
-    }
-}
+
 
 .page-item .page-link {
     color: $ara-black;
@@ -746,16 +742,20 @@ a[data-action="showcount"],
 .aabtn,
 .aalink,
 .adminpagetitle a,
-.editor_atto_menu .dropdown-menu>li>a,
+#advancedsearch a,
+.backlink a,
 .coursecat a,
 .course_category_tree a,
 .coursebox a,
 .commentscontainer a,
+.cap-desc a,
 .categoryname a,
 .category-listing-actions a:not(.btn-secondary),
+.currentgrade a,
+.chart-table a,
+.editor_atto_menu .dropdown-menu>li>a,
 .form-description a,
-.forumpost .header a,
-.forumpost footer a,
+.form-group.fitem + a,
 .floater a,
 .glossarycontrol a,
 .glossarydisplay .entrybox a,
@@ -766,9 +766,14 @@ a[data-action="showcount"],
 .paging a,
 #page-user-preferences #page-content a,
 #page-mod-feedback-edit [role="main"] p>a,
+.quizattemptcounts a,
+a.portfolio-add-link,
 #siteconfiglink a,
 .reportlink a,
 .resettable a,
+.statusdisplay a,
+#techinfo a,
+#techinfo + a,
 .userprofile a {
     color: $ara-blue;
     text-decoration: none;
@@ -826,14 +831,31 @@ a[data-action="showcount"],
         box-shadow: 0 0 0 .2rem rgba($ara-secondary,.5);
     }
 }
-// Forum post actions.
-.forumpost .post-actions a {
+// Forum.
+.path-mod-forum {
+    .activesetting, .currentlink {
+        color: $ara-blue;
+    }
+}
+#page-mod-forum-index table.generaltable a,
+.discussion-list a,
+.discussion-settings-menu a,
+.discussion-nav a,
+.forumpost .header a,
+.forumpost footer a,
+.forumpost .post-actions a[data-region="post-action"] {
     color: $ara-blue;
     text-decoration: none;
-    &:hover {
-        color: $ara-black;
-        text-decoration: underline;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $ara-blue;
+        text-decoration: none;
     }
+}
+
+.icon.text-info {
+    color: $ara-blue !important;
 }
 
 a[data-add-sections] {
@@ -844,41 +866,58 @@ a[data-add-sections] {
         text-decoration: underline;
     }
 }
+
 .block_course_contents {
     li.section-item,
     li.list-group-item {
         border: none;
+        a:hover {
+            text-decoration: none;
+        }
         .section-number,
         .badge {
             border-radius: 3px;
         }
-        &.selected,
-        &.active {
+        &.current.active,
+        &.selected.active {
             font-weight: 700;
-            background-color: initial;
+            background-color: $ara-blue;
             border-color: initial;
             .section-number,
             .badge {
-                background-color: $ara-blue;
-                color: $ara-white;
+                background-color: $ara-white;
+                color: $ara-blue;
             }
             .section-title {
                 text-decoration: none;
-                color: $ara-black;
+                color: $ara-white;
             }
         }
     }
 }
 
+.studentdashboard {
+    a, .list-group .list-group-item {
+        color: $ara-blue;
+    }
+}
+
 .page-item.disabled .page-link {
     color: $ara-black;
-    opacity: 50%;
+    opacity: 0.5;
     pointer-events: none;
     cursor: auto;
 }
 
-.format-onetopic ul.nav-tabs li a .tab_content.dimmed .sectionname {
+.innertab.tab_content.dimmed {
     color: #474545;
     background-color: #d3d3d3;
     opacity: 1.5;
+}
+
+// Had to do this as in student view tip background is white.
+div.tooltip-inner {
+    color: $ara-white !important;
+    background-color: $ara-black !important;
+    opacity: 1;
 }
