@@ -921,3 +921,37 @@ div.tooltip-inner {
     background-color: $ara-black !important;
     opacity: 1;
 }
+
+// OUMC answer choice align fix.
+.que.oumultiresponse .answer div.r0, .que.oumultiresponse .answer div.r1 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+
+@include media-breakpoint-down(sm) {
+    .format-onetopic {
+        .nav-tabs {
+            background-color: $ara-white;
+            .nav-item {
+                flex: none;
+                a {
+                    text-decoration: none;
+                    color: $ara-blue;
+                    padding: 2px 2px 3px 2px;
+                    outline: none !important;
+                    margin: 4px 1px 1px 2px;
+                }
+                .nav-link {
+                    border: 1px solid transparent;
+                    &.active:not(:disabled):not(.disabled).active {
+                        background-color: $ara-white;
+                        border-color: $ara-blue $ara-blue $ara-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
