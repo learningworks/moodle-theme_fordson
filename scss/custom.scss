@@ -947,6 +947,7 @@ div.tooltip-inner {
                     &.active:not(:disabled):not(.disabled).active {
                         background-color: $ara-white;
                         border-color: $ara-blue $ara-blue $ara-white;
+                        color: $ara-blue;
                     }
                 }
             }
